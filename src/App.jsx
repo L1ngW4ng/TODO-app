@@ -10,6 +10,9 @@ export default function App() {
 
   const [confettiRun, setConfettiRun] = useState(false);
 
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+
   function celebrate() {
     var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
@@ -45,9 +48,13 @@ export default function App() {
       text: newText,
       working: false,
       done: false,
+      date: date,
+      time: time
     };
     setTodoElements([...todoElements, newTodo]);
     setNewText("");
+    setDate("");
+    setTime("");
   }
 
   function DeleteNote(id) {
@@ -107,6 +114,8 @@ export default function App() {
             }
           }}
         />
+        <input className='todo-deadline-date' type="date" value={date} onChange={ e => setDate(e.target.value) }/>
+        <input className='todo-deadline-time' type="time" value={time} onChange={ e => setTime(e.target.value) }/>
         { confettiRun && <Confetti run={ confettiRun }/> }
         <button className='control-buttons' onClick={AddNote}>Add</button>
       </div>
@@ -129,6 +138,7 @@ export default function App() {
             <div key={todo.id} className="todo-object">
               <button className="delete-button" onClick={() => DeleteNote(todo.id)} title='Delete'>🗑️</button>
               <div className='todo-text'>{todo.text}</div>
+              <div>{todo.date} {todo.time}</div>
               <div className='spacer' />
 
               <div className="emoji-toggle">
