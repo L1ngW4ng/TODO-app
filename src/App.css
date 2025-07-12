@@ -1,0 +1,258 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 100%;               
+  background-color:#fff;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.App {
+  background-color:rgb(187, 170, 145);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  background-color: rgb(201, 179, 146);
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  top: 15px;
+  width: 1000px;
+  max-width: 1000px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.controls {
+  background-color: rgb(201, 179, 146);
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+  width: 1000px;
+  max-width: 1000px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control-buttons {
+  background-color: rgb(141, 72, 15);
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.control-buttons:hover {
+  background-color: rgb(121, 62, 13);
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+.todo-list {
+  background-color: rgb(201, 179, 146);
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+  min-width: 1200px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+
+.todo-object {
+  position: relative;
+  background-color: rgb(192, 165, 121);
+  margin: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  font-size: medium;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: auto;
+  max-width: 1000px;
+  gap: 20px;
+}
+
+.todo-text {
+  margin-left: 30px;
+  margin-right: auto;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/*
+.deleteBox, .workingBox, .doneBox {
+  width: 25px;
+  height: 25px;
+}
+*/
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.delete-button:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.check-label {
+  font-size: 0.8rem;
+  color: black;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+
+.todo-input {
+  flex-grow: 1;
+  left: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: medium;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--form-background);
+  margin: 10px;
+
+  font: inherit;
+  color: currentColor;
+  width: 25px;
+  height: 25px;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+/* Emoji-knappstilar (för checkboxarna med emojis ✏️ och ✅) */
+.emoji-toggle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.emoji-checkbox {
+  display: none;
+}
+
+.emoji-label {
+  font-size: 28px;
+  padding: 5px 15px; /* mer padding horisontellt */
+  border-radius: 6px;
+  width: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  margin-left: 10px;
+}
+
+
+.emoji-label.selected {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  /*
+  width: 25px;
+  height: 25px;
+  */
+}
+
