@@ -131,26 +131,6 @@ header {
   flex-grow: 1;
 }
 
-/*
-.deleteBox, .workingBox, .doneBox {
-  width: 25px;
-  height: 25px;
-}
-*/
-
-.delete-button {
-  background-color: transparent;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.delete-button:hover {
-  color: red;
-  transform: scale(1.2);
-}
-
 
 .checkbox-group {
   display: flex;
@@ -281,3 +261,81 @@ input[type="time"]:focus {
   border-color: #a67c00;
   background-color: #fffbe6;
 }
+
+.user {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.login-button {
+  background-color: rgb(192, 165, 121);
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  width: auto;
+  height: auto;
+  display: flex;
+  font-size: medium;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.login-button:hover {
+  background-color: rgb(172, 145, 101);
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+}
+
+.loginBox {
+  background-color: rgb(186, 166, 139);
+  border: 5px solid rgb(172, 145, 101);
+  /* filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5)); */
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  /* max-width: 300px; */
+}
+
+.login-input {
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  display: flex;
+  font-size: medium;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.user-label {
+  font-size: 32px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  margin-left: auto;
+  margin-right: auto
+}
+
+

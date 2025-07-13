@@ -13,6 +13,18 @@ export default function App() {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [fileUsername] = useState("L1ngW4ng");
+  const [filePassword] = useState("myPassword123");
+  
+
+  const [showLogin, setShowLogin] = useState(false);
+
+  const [loggedInUsername, setLoggedInUsername] = useState("");
+  
+
   function celebrate() {
     var duration = 5 * 1000;
     var animationEnd = Date.now() + duration;
@@ -85,6 +97,19 @@ export default function App() {
     });
   }
 
+  function handleLogin() {
+    if(username === fileUsername && password === filePassword) {
+      setLoggedInUsername(username);
+      setShowLogin(false);
+      setUsername("");
+      setPassword("");
+    }
+    else {
+      alert("Wrong username or password");
+    }
+  }
+
+
   useEffect(() => {
     if (confettiRun) {
       const timer = setTimeout(() => {
@@ -100,6 +125,28 @@ export default function App() {
       <header>
         <h1>TODO App</h1>
       </header>
+
+      <div className='user'>
+        <label className='user-label'>{ loggedInUsername ? `Logged in as: ${loggedInUsername}` : ""}</label>
+
+        {!showLogin && !loggedInUsername && (
+          <button className='login-button' onClick={() => setShowLogin(true)}>Login</button>
+        )}
+
+
+
+        {showLogin && (
+          <div className='loginBox'>
+            <label>Username:</label>
+            <input className='login-input' type="text" value={username} onChange={e => setUsername(e.target.value)} />
+
+            <label>Password:</label>
+            <input className='login-input' type="password" value={ password } onChange={e => setPassword(e.target.value)} />
+
+            <button className='login-button' onClick={() => { handleLogin()}}>Login</button>
+          </div>
+        )}
+      </div>
 
       <div className='controls'>
         <input
@@ -127,7 +174,6 @@ export default function App() {
           <p style={{
             color: 'white',
             fontStyle: 'italic',
-            /*fontFamily: 'cursive', */
             fontSize: '1rem',
             marginTop: '20px'
           }}>
